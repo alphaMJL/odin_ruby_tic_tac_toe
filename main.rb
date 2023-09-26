@@ -59,32 +59,32 @@ end
 
             if !@game_board.board_state.any? {|item| item.match(/^[1-9]$/)}
                 @winner = "Draw"
-                @is_game_over=true
+                @is_game_over = true
             end
         end
-    
     end
     #end of game play again
     def play_again()
         puts "\n\nPlay again?" 
         puts "Y to play again, X to quit"
         play = gets.chomp
-        until gets.chomp == /^[YyXx]$/
+        until play =~ /^[YyXx]$/
             puts "Y to play again, X to quit"
             play = gets.chomp
         end
-
+    
         if play.downcase == "y"
-            game_board.reset_board
-            new.reset_game
+            @game_board.reset_board
+            reset_game
+            start_game
         else
-                exit
+            exit
         end
     end
-
      #take input from player and validate
     def get_move
-        current_input = gets.chomp
+        puts "Please enter a a number 1-9"
+        current_input = gets.chomp 
         while !(current_input =~ /^[1-9]$/) || !(@game_board.board_state[current_input.to_i - 1] =~ /^[1-9]$/)
             puts "Invalid input. Please enter a valid number 1-9 to choose your move."
             current_input = gets.chomp
@@ -98,7 +98,8 @@ end
     def switch_players()
         if @current_player == @player_1
             @current_player = @player_2
-        else @current_player = @player_1
+        else 
+            @current_player = @player_1
         end
     end
     #draw new board
@@ -131,21 +132,12 @@ end
             system 'clear'
             puts "Welcome to Tic-Tac Toe! \n\n" 
             puts @game_board.draw_board()
-            puts "\n\n #{@current_player.name}'s turn"
             switch_players()
-                
-        
+            puts "\n\n#{@current_player.name}'s turn"
         end
-
-        display_result()
-        play_again()
-        
-
+        display_result
+        play_again
     end
-    
-    
   end
-
-  
   new = Game.new
-  new.start_game()
+  new.start_game
