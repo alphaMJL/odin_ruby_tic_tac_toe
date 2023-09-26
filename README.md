@@ -1,3 +1,12 @@
+Basic terminal ruby tic-tac-toe game employing OOP principles
+
+Code has some poor indentation practices which I will avoid in the future.
+
+
+
+
+
+
 # odin_ruby_tic_tac_toe
 Console tic-tac-toe game as a part of The Odin Project
 
@@ -14,5 +23,3 @@ Post your solution below, then check out this example solution from RosettaCode.
 
 
 
-Issues: current player not showing correctly
-        new game not working correctly
