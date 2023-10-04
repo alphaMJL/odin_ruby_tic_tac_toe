@@ -1,14 +1,12 @@
-Basic terminal ruby tic-tac-toe game employing OOP principles
-
-Code has some poor indentation practices which I will avoid in the future.
-
-
-
-
-
-
 # odin_ruby_tic_tac_toe
-Console tic-tac-toe game as a part of The Odin Project
+Console tic-tac-toe game as a part of The Odin Project  
+
+This project demonstrates:  
+OOP design principles  
+Classes  
+Scoping   
+
+
 
 
 Introduction
